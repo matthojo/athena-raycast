@@ -43,7 +43,7 @@ Raycast asks for two things the first time you run a command:
    - A **capture** key (`athc_…`) can only add things. It can't read anything back, so Search, To-Dos, Coming up and the menu bar stay shut.
    - A **full access** key (`athk_…`) opens every command. It can read and change everything the app can, so make one for Raycast alone, label it "Raycast", and remove it in Athena if this Mac is lost.
 
-A Claude only key (`athm_…`) is turned away, and the access token never needs pasting here.
+The extension refuses a Claude only key (`athm_…`), and you never need to paste Athena's access token here.
 
 ## Privacy
 
@@ -66,7 +66,7 @@ npm run lint       # Raycast's manifest check, ESLint and Prettier
 
 ## Publishing to the Raycast Store
 
-Not done. Before it could be:
+The extension isn't in the Raycast Store yet. Before it can be:
 
 - `author` in `package.json` must be your Raycast username (it's a placeholder now).
 - The Store wants screenshots in `metadata/`. Take them against an Athena running in sample data, never a signed-in copy.
