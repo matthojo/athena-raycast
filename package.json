@@ -1,0 +1,156 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "athena",
+  "title": "Athena",
+  "description": "Capture to, search and tick things off in your own Athena.",
+  "icon": "icon.png",
+  "author": "athena",
+  "categories": [
+    "Productivity",
+    "Applications"
+  ],
+  "license": "MIT",
+  "private": true,
+  "commands": [
+    {
+      "name": "capture",
+      "title": "Capture",
+      "subtitle": "Athena",
+      "description": "Write something down. Athena files it as a to-do, a note, a date or a person's detail.",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "text",
+          "type": "text",
+          "placeholder": "What to capture",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "quick-capture",
+      "title": "Quick Capture",
+      "subtitle": "Athena",
+      "description": "Send one line to Athena without opening a window.",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "text",
+          "type": "text",
+          "placeholder": "What to capture",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "save-link",
+      "title": "Save Link",
+      "subtitle": "Athena",
+      "description": "Save a link to Saved: the one you type, the selected one, the browser tab in front, or the one on the clipboard.",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "url",
+          "type": "text",
+          "placeholder": "Link (or leave empty)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "save-selection",
+      "title": "Save Selection",
+      "subtitle": "Athena",
+      "description": "Save the selected text to Saved as a quote, with the page it came from when a browser is in front.",
+      "mode": "no-view"
+    },
+    {
+      "name": "search",
+      "title": "Search Athena",
+      "description": "Find people, notes, to-dos, places, saved things and days. Needs a full access key.",
+      "mode": "view"
+    },
+    {
+      "name": "todos",
+      "title": "To-Dos",
+      "subtitle": "Athena",
+      "description": "What's open, soonest first. Tick things off or move their date. Needs a full access key.",
+      "mode": "view"
+    },
+    {
+      "name": "add-todo",
+      "title": "Add To-Do",
+      "subtitle": "Athena",
+      "description": "Add a to-do with a date, exactly as you type it. Needs a full access key.",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "title",
+          "type": "text",
+          "placeholder": "To-do",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "coming-up",
+      "title": "Coming up",
+      "subtitle": "Athena",
+      "description": "Events, birthdays and deadlines in the next two weeks, and who's due a catch-up. Needs a full access key.",
+      "mode": "view"
+    },
+    {
+      "name": "habits",
+      "title": "Habits",
+      "subtitle": "Athena",
+      "description": "Tick today's habits. With a capture key, log one by name.",
+      "mode": "view"
+    },
+    {
+      "name": "menu-bar",
+      "title": "Athena Menu Bar",
+      "description": "What's due today and what's on, in the menu bar. Needs a full access key.",
+      "mode": "menu-bar",
+      "interval": "15m"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "address",
+      "title": "Athena Address",
+      "description": "Where your Athena lives, for example https://athena.example.com.",
+      "type": "textfield",
+      "placeholder": "https://athena.example.com",
+      "required": true
+    },
+    {
+      "name": "key",
+      "title": "API Key",
+      "description": "Made in Athena under Settings → API keys. A capture key (athc_…) can only add things. A full access key (athk_…) also lets Raycast search and read.",
+      "type": "password",
+      "placeholder": "athc_… or athk_…",
+      "required": true
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^2.13.1",
+    "@raycast/utils": "^2.3.3"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.2.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "eslint": "^9.39.5",
+    "prettier": "^3.10.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build -e dist",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test 'test/*.test.ts'"
+  }
+}

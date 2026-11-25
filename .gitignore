@@ -1,0 +1,5 @@
+node_modules
+dist
+# written by `ray develop` and `ray build` from package.json
+raycast-env.d.ts
+.raycast
