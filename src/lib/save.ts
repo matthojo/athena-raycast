@@ -15,13 +15,13 @@ export interface SaveFields {
 
 /**
  * Saves a link or a quote. `created` is false when Athena already had that
- * link. Athena's list of sources has no entry for Raycast, so it's filed with
- * the browser extension's.
+ * link. An Athena from before it knew the "raycast" source files the save as
+ * the app's own, so this works against older copies too.
  */
 export async function save(fields: SaveFields): Promise<Saved & { created: boolean }> {
   const { status, body } = await athenaSend<Saved>("/api/saved", {
     method: "POST",
-    body: { ...fields, source: "extension", client_id: randomUUID() },
+    body: { ...fields, source: "raycast", client_id: randomUUID() },
     capture: true,
     timeout: 30_000,
   });
